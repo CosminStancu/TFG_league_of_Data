@@ -1,0 +1,92 @@
+@import url("variables.css");
+@import url("error.css");
+
+::placeholder{
+    font-size: 0.8rem;
+}
+.registerA{
+    color: white;
+}
+.registerA:hover{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+     font-weight: bold;
+    text-decoration: none;
+}
+.container{
+    height: 100vh;
+}
+.my-background-color{
+    background: var(--color1-);
+    background: linear-gradient(135deg, var(--cyan-oscuro-) 0%, var(--cyan-claro-) 100%);
+}
+.form-rounded{
+    border-radius: 1.2rem;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
+    background-color: rgb(234, 234, 234);
+}
+
+.mybutton{
+    font-weight: bold;
+    color: white;
+    border: solid 2px;
+    background: linear-gradient(135deg, var(--cyan-claro-) 0%, var(--cyan-oscuro-) 100%);
+    transition: .3s;
+}
+
+.mybutton:hover{
+    transition: 1s;
+    background: white;
+    color: black;
+    border: solid 2px var(--cyan-oscuro-);
+}
+
+.buttonBgImage{
+    color: white;
+    background-color: transparent;
+    border: solid 2px white;
+}
+.buttonBgImage:hover{
+    color: var(--cyan-oscuro-);
+    background-color: white;
+}
+.wrongValidation{
+    color: red;
+    padding: 0;
+    visibility: hidden;
+}
+.fondoDelCuerpo{
+    background: #2e1c34;  /* fallback for old browsers */
+
+    background: linear-gradient(to bottom, #2F0743, #2e1c34); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.round-01,.round-01r{
+ border-radius: 0px 1.2rem 1.2rem 0px;
+}
+.round-02,.round-02r{
+    border-radius: 1.2rem 0px 0px 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .round-01{
+ border-radius: 0rem 0rem 1.2rem 1.2rem;
+}
+.round-02{
+     border-radius: 1.2rem 1.2rem 0rem 0rem;
+}
+  .round-01r{
+ border-radius:1.2rem 1.2rem 0rem 0rem ;
+}
+.round-02r{
+     border-radius: 0rem 0rem 1.2rem 1.2rem;
+}
+}

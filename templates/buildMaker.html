@@ -1,0 +1,214 @@
+{% extends 'main.html' %}
+{% load  static %}
+{% load mathfilters %}
+
+{% block title%}
+     <title>Build Maker</title>
+    <link rel="stylesheet" href="{% static '/css/championData.css' %}">
+{% endblock %}
+{% block content %}
+{% if not request.session.error %}
+    <div class="parallaxBuildMaker" id="parallaxBuildMaker">
+
+<div class="selector">
+
+            <div id="selectField">
+                <img id="imagenCampeon" src="{% static 'imagenes/championDataResources/champion/nochamp.png' %}">
+                <p id="nombreDePersonaje">Choose a champion</p>
+            </div>
+            <ul id="listaDePersonajes" class="esconder">
+                <input type="text" id="buscadorDePj">
+            </ul>
+
+
+        </div>
+    <div class="habilidades">
+    <table id="tablaDeDatos" class="tablaInvisible tablaCompleta">
+        <tr>
+            <th colspan="3">Abilities</th>
+        </tr>
+        <tr>
+            <th>Passive</th>
+            <td id="0ImgTd"><img id="0Img" src=""></td>
+            <td>
+                <table class="headerHabilidades">
+                    <tr>
+                        <td id="mana0"></td>
+                        <td id="habil0"></td>
+                        <td id="cd0"></td>
+                    </tr>
+                </table>
+                <p id="habilDesc0"></p>
+                <p id="daño0"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>Q Ability</th>
+            <td id="1ImgTd"><img id="1Img" src=""></td>
+            <td>
+               <table class="headerHabilidades">
+                    <tr>
+                        <td id="mana1"></td>
+                        <td id="habil1"></td>
+                        <td id="cd1"></td>
+                    </tr>
+                </table>
+                <p id="habilDesc1"></p>
+                 <p id="daño1"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>W Ability</th>
+            <td id="2ImgTd"><img id="2Img" src=""></td>
+            <td>
+                <table class="headerHabilidades">
+                    <tr>
+                        <td id="mana2"></td>
+                        <td id="habil2"></td>
+                        <td id="cd2"></td>
+                    </tr>
+                </table>
+                <p id="habilDesc2"></p>
+                 <p id="daño2"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>E Ability</th>
+            <td id="3ImgTd"><img id="3Img" src=""></td>
+            <td>
+                <table class="headerHabilidades">
+                    <tr>
+                        <td id="mana3"></td>
+                        <td id="habil3"></td>
+                        <td id="cd3"></td>
+                    </tr>
+                </table>
+                <p id="habilDesc3">
+                </p>
+                <p id="daño3"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>R Ability</th>
+            <td id="4ImgTd"><img id="4Img" src=""></td>
+            <td>
+               <table class="headerHabilidades">
+                    <tr>
+                        <td id="mana4"></td>
+                        <td id="habil4"></td>
+                        <td id="cd4"></td>
+                    </tr>
+                </table>
+                <p id="habilDesc4"></p>
+                 <p id="daño4"></p>
+            </td>
+        </tr>
+    </table>
+
+    <table class="baseStats" id="baseStat">
+        <tr>
+            <th colspan="3">Base Statistics</th>
+        </tr>
+        <tr>
+            <td colspan="3" class="selectorDeNivel">
+                <div class="selectorNivel">
+                    <div id="selectorNivelField">
+                        <p id="nivelSelec">Level 1</p>
+                    </div>
+                </div>
+                <ul id="listaNiveles" class="esconder">
+                    <li class="optionLevel"><p>Level 1</p></li>
+                    <li class="optionLevel"><p>Level 2</p></li>
+                    <li class="optionLevel"><p>Level 3</p></li>
+                    <li class="optionLevel"><p>Level 4</p></li>
+                    <li class="optionLevel"><p>Level 5</p></li>
+                    <li class="optionLevel"><p>Level 6</p></li>
+                    <li class="optionLevel"><p>Level 7</p></li>
+                    <li class="optionLevel"><p>Level 8</p></li>
+                    <li class="optionLevel"><p>Level 9</p></li>
+                    <li class="optionLevel"><p>Level 10</p></li>
+                    <li class="optionLevel"><p>Level 11</p></li>
+                    <li class="optionLevel"><p>Level 12</p></li>
+                    <li class="optionLevel"><p>Level 13</p></li>
+                    <li class="optionLevel"><p>Level 14</p></li>
+                    <li class="optionLevel"><p>Level 15</p></li>
+                    <li class="optionLevel"><p>Level 16</p></li>
+                    <li class="optionLevel"><p>Level 17</p></li>
+                    <li class="optionLevel"><p>Level 18</p></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="tipoDeStat">HP</span><br>
+                <span class="statValue" id="stat0"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">HP Regen</span><br>
+                <span class="statValue" id="stat1"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat" id="recurso">Resource</span><br>
+                <span class="statValue" id="stat2"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="tipoDeStat">Resource Regen</span><br>
+                <span class="statValue" id="stat3"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Critical Damage</span><br>
+                <span class="statValue" id="stat4"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Range</span><br>
+                <span class="statValue" id="stat5"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="tipoDeStat">Armor</span><br>
+                <span class="statValue" id="stat6"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Magic Resistance</span><br>
+                <span class="statValue" id="stat7"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Attack Damage</span><br>
+                <span class="statValue" id="stat8"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="tipoDeStat">Movement Speed</span><br>
+                <span class="statValue" id="stat9"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Attack Speed</span><br>
+                <span class="statValue" id="stat10"></span>
+            </td>
+            <td>
+                <span class="tipoDeStat">Attack Speed Ratio</span><br>
+                <span class="statValue" id="stat11"></span>
+            </td>
+        </tr>
+
+    </table>
+    </div>
+    </div>
+
+{% else %}
+    <h1 class="errorAlert">{{ request.session.error }} <br>
+    {% if request.session.error1 %}{{ request.session.error1 }}{% endif %}<br>
+    {% if request.session.error2 %}{{ request.session.error2 }}{% endif %}<br>
+    </h1>
+    {% endif%}
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'javascript/championData.js' %}"></script>
+{% endblock %}
+
+

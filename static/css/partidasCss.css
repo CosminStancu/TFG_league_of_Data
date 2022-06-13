@@ -1,0 +1,212 @@
+@import url("variables.css");
+@import url("error.css");
+
+.ganada{
+    background: #6CC92D;
+    border-radius: 35px 0px 0px 0px!important;
+    border: solid 2px black;
+}
+
+.perdida{
+    background:#E84057;
+    border-radius: 35px 0px 0px 0px!important;
+    border: solid 2px black;
+}
+
+.ContenedorDePartidas img{
+    border: 2px solid black!important;
+}
+
+.ContenedorDePartidas{
+    color: black;
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#listaDePartidas{
+    list-style: none;
+}
+#listaDePartidas > li{
+    margin-bottom: 20px;
+        height: 146px;
+}
+
+li img:not(.summoner){
+    width: 60px;
+    border-radius: 50px;
+}
+
+.datoDePartidaDIV{
+    width: 50px;
+    height: 100%;
+    text-align: left;
+}
+.datoDePartidaDIV p{
+    font-size: 1.4rem;
+}
+.nivelDePersonaje{
+    position: absolute;
+    width: 25px;
+    height: 23px;
+    text-align: center;
+    line-height: 30px;
+    left: 100px;
+    font-weight: bold;
+}
+.summoner{
+    position: relative;
+    width: 25px;
+    margin: 2px;
+    top: -30px;
+    left: 50px;
+}
+.score{
+    position: absolute;
+    margin-top: 8rem;
+    left:9.5rem;
+}
+.divDePersonajes{
+    padding: 0;
+    float: right;
+    display: flex;
+}
+.divDePersonajes a{
+    font-size: 1.4rem;
+    color: black!important;
+}
+.divDePersonajes ul{
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    margin-right: 40px;
+    height: fit-content;
+}
+
+.divDePersonajes a img{
+    border-radius: 0px!important;
+    width: 20px!important;
+    margin-top: 1px!important;
+    margin-left: 1px!important;
+}
+
+.divItems{
+    position: absolute;
+    display: block;
+    left: 18rem;
+    margin-top: 2rem;
+}
+
+.divItems img{
+    border-radius: 0px!important;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 40px!important;
+    transition: .5s;
+}
+.divDePersonajes a {
+    font-size: 1.6rem;
+}
+@media (max-width: 1050px) {
+
+.divItems img{
+    border-radius: 0px!important;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 5px;
+    left: -60px;
+    top: -20px;
+    width: 30px!important;
+    transition: .5s;
+}
+
+}
+@media (max-width: 924px) {
+
+/*.ContenedorDePartidas{*/
+/*    max-width: 610px;*/
+/*     width: calc(100% - 200px);*/
+/*}*/
+    .divDePersonajes ul{
+        width: 150px!important;
+        margin-right: 10px;
+        left: -200px;
+    }
+    #listaDePartidas,.score,.divItems,.nivelDePersonaje{
+        margin-left: -220px;
+    }
+    .divDePersonajes ul li a{
+        font-size: 1.3rem;
+    }
+
+    .divItems img{
+    border-radius: 0px!important;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 5px;
+        left: 10px;
+    width: 40px!important;
+    transition: .5s;
+}
+.datoDePartidaDIV{
+
+}
+}
+@media (max-width: 674px) {
+
+.divItems img{
+    border-radius: 0px!important;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 5px;
+    left: -60px;
+    top: -20px;
+    width: 30px!important;
+    transition: .5s;
+}
+    .ranked table{
+        margin-left: -20px;
+    }
+}
+@media (max-width: 572px) {
+    .ranked{
+        margin: 0;
+    }
+.divItems img{
+    display: none;
+}
+       .divDePersonajes ul {
+    width: 130px!important;
+    margin-right: 10px;
+    left: -200px;
+}
+
+    .score{
+        font-size: 1.8rem;
+        margin-top: 93px;
+        left: 66px;
+    }
+    .summoner {
+    position: relative;
+    width: 25px;
+    margin: 2px;
+    top: -30px;
+    left: 20px;
+}
+
+    .divDePersonajes ul li a{
+        font-size: 1.2rem;
+    }
+    #listaDePartidas, .score, .divItems, .nivelDePersonaje {
+    margin-left: -234px;
+}
+}
+@media (max-width: 375px) {
+.divItems img{
+    display: none;
+}
+
+}

@@ -1,0 +1,7 @@
+@import url("variables.css");
+
+.errorAlert{
+    margin-top: 6.2rem;
+    text-align: center;
+    color: red;
+}

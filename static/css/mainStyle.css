@@ -1,0 +1,117 @@
+@import url("variables.css");
+@import url("error.css");
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+.navbar{
+    z-index: 20;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius:80px;
+  background: var(--cyan-claro-);
+  border:5px transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+body{
+    background-color: purple;
+}
+a img{
+    color: white;
+    margin-top: -1.6rem;
+    width: 50px;
+}
+.barraDeNavegacion{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+}
+.barraDeNavegacion, .dropdown-toggle, .dropdown-menu, .navbar-toggle{
+    background-color: var(--morado-oscuro)!important;
+    border: none;
+}
+a{  
+    color: rgb(238, 238, 238)!important;
+}
+
+ul.dropdown-menu a:hover{
+    background-color: rgba(255, 255, 255, 0.2)!important;
+}
+.footerMain{
+    position: fixed;
+    text-align: center;
+    color: white;
+    bottom: 0;
+    width: 100%;
+}
+a::after {
+    background: var(--cyan-claro-);
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 0.35em;
+    bottom: 0;
+    left: 0;
+    border-radius: 0px 0px 10px 10px;
+    z-index: 100;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+/* */
+  .formIndex2{
+      border: solid 2px white;
+      border-radius: 20px 20px 20px 20px;
+      margin-top: 5px;
+      transition: ease all .5s;
+	 background: linear-gradient(135deg, var(--cyan-oscuro-) 0%, var(--cyan-claro-) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* <- here it is */
+
+}
+.selectIndex2, .inputTextIndex2,.buscarIndex2, .inputTextIndex2::placeholder{
+    height: 40px;
+	border: none;
+	background: transparent;
+	color: white;
+	font-weight: bold;
+}
+
+.selectIndex2{
+border-radius: 20px 0px 0px 20px;
+}
+.selectIndex2:focus,.inputTextIndex2:focus{
+	outline: none;
+}
+.buscarIndex2{
+    border-radius: 0px 20px 20px 0px;
+}
+option:before{
+
+}
+.bgColor{
+    transition: .5s;
+    background: white;
+    color: black;
+    border: solid 2px var(--cyan-oscuro-);
+
+}
+
+.bgColor ::placeholder,.placeholderNegro ::placeholder, .placeholderNegro{
+color: black;
+}

@@ -1,0 +1,329 @@
+@import url("variables.css");
+@import url("error.css");
+:root{
+    --tamaño-del-Buscador:350px;
+}
+body{
+    overflow: hidden;
+}
+.selector{
+    width: var(--tamaño-del-Buscador);
+}
+.selectorNivel{
+    width: 100%;
+    background: var(--morado-oscuro);
+}
+.selectorNivel:hover{
+    background: var(--morado-clarito);
+}
+.selectorContenedor{
+    width: fit-content;
+    margin: 0;
+}
+
+.selector img {
+    width: 100px;
+    cursor: pointer;
+}
+#selectField{
+    margin-left: 20px;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    color: white;
+}
+ #selectorNivelField{
+     cursor: pointer;
+    width: 100%;
+    color: white;
+ }
+ #selectorNivelField p {
+     cursor: pointer;
+     margin:0!important;
+ }
+ #listaNiveles{
+      border-radius: 6px;
+     overflow: hidden;
+     position: absolute;
+        width: 105%;
+     height: 100px;
+     overflow:hidden;
+      overflow-y:scroll;
+     left: -40px;
+        transition: all 0.5s ease;
+ }
+ .optionLevel{
+         color: white;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    background: var(--morado-oscuro);
+ }
+ .optionLevel:hover{
+     background: var(--morado-clarito);
+ }
+#listaDePersonajes{
+    margin-top: -30px;
+  border-radius: 6px;
+ overflow: hidden;
+ position: relative;
+    width: 100%;
+ height: 200px;
+ overflow:hidden;
+  overflow-y:scroll;
+    transition: all 0.5s ease;
+}
+#nombreDePersonaje{
+    line-height: 100px;
+    margin-left: 10px;
+    font-size: 1.3em;
+}
+#buscadorDePj{
+    width: 100%;
+    padding: 5px;
+
+}
+.opt{
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1px;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    background: var(--morado-oscuro);
+}
+.esconder{
+    display: none;
+}
+.opt img{
+    width: 50px;
+}
+.visible{
+    visibility: visible;
+    display: block;
+}
+
+#listaDePersonajes::-webkit-scrollbar{
+    display: none;
+}
+img[src=""] {
+    display: none;
+}
+
+.opt p{
+    width:fit-content;
+    margin-top: 16px;
+    margin-left: 8px;
+}
+.opt{
+  color: pink;
+  transition: color .4s ease-in-out, background .4s ease-in-out;
+}
+.opt:hover{
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2)!important;
+}
+.habilidades{
+    width: fit-content;
+    margin:40px;
+    display: flex;
+    color: white;
+}
+.habilidades .tablaCompleta{
+    min-height: 600px;
+    max-height: 800px;
+}
+.habilidades div img{
+    border: solid 2px;
+    width: 100px;
+    height: 100px;
+}
+.habilidades div p{
+    line-height: 20px;
+}
+
+/*Estados de habilidades*/
+table:not(.headerHabilidades){
+    backdrop-filter: blur(10px);
+
+}
+.small{
+    font-size: .4rem;
+}
+
+/* PINTAR HABILIDADES */
+
+.tablaInvisible{
+    display: none;
+}
+.tablaCompleta *{
+    text-align: left!important;
+}
+#tablaDeDatos tr,#tablaDeDatos td{
+    padding: 15px;
+    border: solid 2px transparent;
+           transition: ease all .5s;
+
+
+}
+
+#nivelSeleccionado{
+    max-height: 200px;
+    width: 100%;
+    text-align: center;
+    color: white!important;
+    background: var(--morado-clarito);
+    outline: none;
+    border: none;
+}
+option:hover{
+    background: rgba(255,255,255,.6);
+}
+tr:nth-child(even){
+    background: rgba(61, 2, 73,.4);
+}
+tr:nth-child(odd){
+    background:rgba(35, 16, 39,.4);
+}
+tr:nth-child(1){
+    background-color: var(--morado-oscuro) ;
+    font-size: 1.2em;
+}
+.tablaCompleta th{
+    min-width: 85px;
+}
+
+health,currentHealth{
+    color: #c03300;
+}
+mana{
+    color: #7A6DFF;
+}
+energia{
+    color: #F5EE99;
+}
+nocost{
+    color: white;
+}
+
+.headerHabilidades{
+    width: 100%;
+}
+.headerHabilidades td{
+    padding: 0!important;
+    margin: 0;
+    width: 33%;
+}
+.headerHabilidades tr{
+    background: none!important;
+}
+#habil0,#habil1,#habil2,#habil3,#habil4{
+    font-weight: bold;
+    color: white;
+}
+
+.dañoHabilidades p{
+   padding: 10px;
+}
+#daño0,#daño1,#daño2,#daño3,#daño4{
+    display: flex;
+    border-top: solid 2px rgba(255,255,255,.4);
+    border-bottom: solid 2px rgba(255,255,255,.4);
+}
+/* STATS BASE */
+.baseStats{
+    margin-left: 2rem;
+    visibility: hidden;
+    text-align: center;
+    height: 200px;
+}
+.baseStats tr td{
+    width: 600px;
+}
+
+#nivelSeleccionado:focus{
+    outline: none;
+}
+.tipoDeStat{
+    font-weight: bold;
+}
+.habilidades  tr:hover:not(.headerHabilidades tr):not(tr:nth-child(1)){
+    background:var(--morado-clarito);
+    transition: ease all .5s;
+}
+th[colspan]{
+    text-align: center!important;
+}
+/* FONDO DE BUILD MAKER */
+.parallaxBuildMaker{
+	position: absolute;
+	padding: 0;
+	width: 100%;
+    background-image: url('https://as.com/esports/imagenes/2017/09/18/league_of_legends/1505743623_885293_1505743732_noticia_normal.jpg');
+    min-height: 93%;
+	background-attachment: fixed;
+	background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* BREAKPOINTS */
+
+@media (max-width: 990px) {
+
+    .habilidades{
+        display: block;
+    }
+    .tablaCompleta{
+        margin: 0!important;
+    }
+    .baseStats{
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+}
+@media (max-width: 728px) {
+
+    .habilidades{
+        display: block;
+    }
+    .tablaCompleta{
+        margin: 0!important;
+    }
+    .baseStats{
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+        th:not(th[colspan]){
+            display: none;
+        }
+
+       td::before {
+      content: attr(data-label);
+      float: left;
+           font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+       td{
+           font-size: 1.4rem;
+       }
+       .baseStats{
+           margin-bottom: 20px;
+       }
+}
+@media (max-width: 628px) {
+.habilidades{
+    margin: 0;
+}
+}

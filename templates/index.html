@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+   <title>League Of data</title>
+     <link rel="stylesheet" href="{% static '/css/indexStyle.css' %}">
+{% endblock %}
+{% block content %}
+    {% if not request.session.error %}
+    <div class="indexBlockContent">
+
+        <div class="parallax">
+                <h1>League of Data</h1>
+                <p>Your statistics trusted page</p>
+
+             <form method="post" id="formIndex" action="" class="formIndex">
+                    {% csrf_token %}
+                  <select name="regionId" id="regionId" class="selectIndex">
+                    <option value="euw1">EUW</option>
+                    <option value="na1">NA</option>
+                    <option value="eun1">EUNE</option>
+                  </select>
+                  <div >
+                    <input type="text" id="invocadorInput" name="invocador" class="inputTextIndex" placeholder="Summonner's name...">
+                  </div>
+                  <button type="submit" id="buttonBusca" class="buscarIndex">Search</button>
+            </form>
+
+            </div>
+
+    </div>
+
+    {% else %}
+    <h1 class="errorAlert">{{ request.session.error }} <br>
+    {% if request.session.error1 %}{{ request.session.error1 }}{% endif %}<br>
+    {% if request.session.error2 %}{{ request.session.error2 }}{% endif %}<br>
+    </h1>
+    {% endif%}
+{% endblock %}
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,145 @@
+@import url("variables.css");
+@import url("error.css");
+body{
+	overflow: hidden;
+}
+.indexBlockContent{
+	height: 92.8vh;
+	width: 100%;
+	overflow: hidden;
+}
+
+.separador{
+	height: 100px;
+	color: white;
+}
+.parallax{
+	position: absolute;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+	transition: ease all .5s;
+    background-image: url('https://as.com/esports/imagenes/2017/09/18/league_of_legends/1505743623_885293_1505743732_noticia_normal.jpg');
+    height: 100%;
+	background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax h1 {
+	z-index: 1;
+    animation:
+        slideUp 0.75s .5s cubic-bezier(0.17,.88,.32,1.27) both,
+		fadeIn .25s .5s ease-in both;
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+	transition: ease all .5s;
+    top: 40%;
+    width: 100%;
+	color: white;
+	font-size: 6em;
+}
+.parallax p {
+	animation:
+        slideUp 0.75s .5s cubic-bezier(0.17,.88,.32,1.27) both,
+		fadeIn .25s .5s ease-in both;
+    padding: 0 20px;
+    position: absolute;
+    text-align: center;
+	transition: ease all .5s;
+    top: 35%;
+	width: 100%;
+	font-size: 2.8em;
+	transition: ease all .5s;
+	color: white;
+}
+/* FORMULARIO */
+.formIndex{
+	animation:
+        slideUp 0.75s .5s cubic-bezier(0.17,.88,.32,1.27) both,
+		fadeIn .25s .5s ease-in both;
+	width: fit-content;
+	display: flex;
+	position: relative;
+	top: 39%;
+	margin: 0 auto;
+	transition: ease all .5s;
+	 background: linear-gradient(135deg, var(--cyan-oscuro-) 0%, var(--cyan-claro-) 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* <- here it is */
+	border-radius: 20px 20px 20px 20px;
+	border: solid 2px white;
+}
+.selectIndex, .inputTextIndex,.buscarIndex, .inputTextIndex::placeholder{
+	height: 40px;
+	border: none;
+	background: transparent;
+	color: white;
+	font-weight: bold;
+}
+.selectIndex{
+	border-radius: 20px 0px 0px 20px;
+}
+.selectIndex:focus,.inputTextIndex:focus{
+	outline: none;
+}
+.buscarIndex{
+	border-radius: 0px 20px 20px 0px;
+}
+option:before{
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+.bgColor{
+	transition: .5s;
+    background: white;
+    color: black;
+    border: solid 2px var(--cyan-oscuro-);
+}
+.bgColor ::placeholder,.placeholderNegro ::placeholder, .placeholderNegro{
+	color: black;
+}
+/* ANIMACION */
+@keyframes slideUp {
+    from {transform: translateY(200%);}
+    to {transform:translateY(-50%);}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* BREAKPOINTS */
+@media (max-width: 789px) {
+	.parallax h1{
+		top: 40%;
+		font-size: 4em;
+	}
+	.parallax p{
+		font-size: 2em;
+		top: 48%;
+	}
+	.formIndex{
+		top: 44%;
+	}
+
+}
+@media (max-width: 544px) {
+	.parallax h1{
+		top: 40%;
+		font-size: 3em;
+	}
+	.parallax p{
+		font-size: 1.6em;
+		top: 48%;
+	}
+	.formIndex{
+		top: 46%;
+	}
+
+}

@@ -1,0 +1,13 @@
+:root{
+    --morado-oscuro:#231027;
+    --morado-clarito:#3d0249;
+    --cyan-oscuro-:#00766B;
+    --cyan-claro-:#00c9b9;
+}
+@font-face {
+    font-family: simpletix;
+    src: url('/static/tipografia/simpletix.otf') format('opentype');
+}
+*{
+    font-family: simpletix;
+}

@@ -1,0 +1,142 @@
+@font-face {
+    font-family: simpletix;
+    src: url('/static/tipografia/simpletix.otf') format('opentype');
+}
+:root{
+    --cyan-oscuro-:#00766B;
+    --cyan-claro-:#00c9b9;
+    --morado-oscuro-:#543f5a;
+    --morado-claro-:#917a97;
+    --color2-: #2F0743;
+    --colo1-: #2e1c34;
+}
+::placeholder{
+    font-size: .8rem;
+}
+a,
+a:hover,
+a:focus {
+    color: white;
+    text-decoration: none; 
+    transition: all 0.3s;
+}
+.contenido{
+    width: 106%;
+    background-color: white;
+    min-height: 90vh;
+    max-height: 90vh;
+}
+.bgColor{
+    background: linear-gradient(to bottom, #2F0743 0%, #540669 100% );;
+}
+/* Barra Lateral */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+.barraLateral {
+    position: relative;
+    left: -100px;
+    min-width: 170px;
+    max-width: 170px;
+    color: #fff;
+    transition: all 1s;
+
+}
+
+.barraLateral::before{
+    content: "";
+    position: absolute;
+    display: block;
+    background: linear-gradient(to bottom, #2F0743 0%, #540669 100% );;
+    width: 170px;
+    min-height: 100vh;
+    transition: all 2s;
+}
+/*.barraLateral:active, .barraLateral:active ~ #contenido*/
+.barraLateral:hover ~ #contenido .moverIzquierda,.barraLateral:hover{
+    left: 0px;
+    transition: all .5s;
+}
+.barraLateral:hover ~ #contenido .moverIzquierdaContenido{
+   width: 99%;
+    left: 0px;
+    transition: all .5s;
+}
+
+.barraLateral:hover::before, .barraLateral:active::before{
+    transition: all 3s;
+    background: transparent;
+    z-index: -10;
+}
+.barraLateral ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    transition: all 1s;
+}
+
+.barraLateral ul li a:hover {
+    color: black;
+    font-weight: bold;
+    background: var(--cyan-claro-);
+    transition: all .5s;
+}
+
+.moverIzquierda{
+    transition: all .5s;
+    position: relative;
+    left: -100px;
+}
+
+.moverIzquierdaContenido{
+        overflow: auto;
+        transition: all .5s;
+        transform-origin: left;
+        position: relative;
+        left: -100px;
+}
+/* CUERPO */
+
+#contenido {
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/*Buscador de invocador*/
+.roundSearchBar{
+    border-radius: 30px;
+    height: 20px;
+    color: black;
+}
+button.roundSearchBar{
+    font-size: .8rem;
+    line-height: 0px;
+}
+/* BUSCADOR */
+.tamaño{
+    min-width: 100px;
+    max-width: 200px;
+}
+
+/* BURGER */
+.burgerMenu{
+    background-color: pink;
+}
+/* MEDIAQUERIES */
+
+@media (max-width: 768px) {
+    .barraLateral {
+    }
+    #barraLateral.active {
+ 
+    }
+    #sidebarCollapse span {
+
+    }
+}

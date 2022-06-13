@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+
+    {# Bootstrap #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    {# CSS #}
+    <link rel="stylesheet" href="{% static '/css/loginRegisterStyle.css' %}">
+
+</head>
+
+<body class="fondoDelCuerpo">
+<div class="container">
+
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-12 col-lg-10">
+            <div class="d-md-flex justify-content-center">
+                <div class="text-wrap p-4 p-lg-5 text-center round-01r d-flex align-items-center my-background-color order-md-last">
+                    <div class="text w-100">
+                        <h1>League Of Data</h1>
+                        <p>¿Ya tienes cuenta?</p>
+                        <a href="{% url 'login_register:loginPage' %}" class="btn form-rounded buttonBgImage small">Log In</a><br>
+                        <div class="form-group d-flex" >
+                <div class="w-100 flex flex-column text-center">
+                    <a  href="{% url 'login_register:index' %}" class="small registerA">Return to Home Page</a>
+                </div>
+            </div>
+                    </div>
+                </div>
+                <div class="login-wrap p-4 p-lg-5 bg-light round-02r">
+                    <h2 class="mb-4 text-center">Register Account</h2>
+                    <form action="" method="POST" class="signin-form">
+                        {% csrf_token %}
+                        <div class="form-group mb-3">
+                            <label class="label" for="email" >Email:</label>
+                            {{ form.email }}
+                            <div class="small wrongValidation" id="validarMail">a</div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="name">User:</label>
+                            {{ form.username }}
+                            <div class="small wrongValidation" id="validarUser">a</div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="password1">Password</label>
+                            <div class="d-flex">
+                                {{ form.password1 }}<br>
+                                {{ form.password2 }}
+                            </div>
+                            <div class="small wrongValidation" id="validarPassword">a</div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn submit px-3 form-rounded mybutton" id="botonRegistrar">Register
+                                User
+                            </button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{# Scripts #}
+{{ form.errors|json_script:'errores' }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{% static '/javascript/validarFormularios.js' %}"></script>
+</body>
+
+</html>
+

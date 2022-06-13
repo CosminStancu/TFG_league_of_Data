@@ -1,0 +1,80 @@
+{% extends 'main.html' %}
+{% load  static %}
+{% load mathfilters %}
+
+
+{% block title %}
+    <title>{{ invocador.name }} - Perfil</title>
+    <link rel="stylesheet" href="{% static '/css/cssPerfil.css' %}">
+    <link rel="stylesheet" href="{% static '/css/partidasCss.css' %}">
+    <script>
+        var region = "{{ region }}"
+        var invocador = "{{ invocador.name }}"
+    </script>
+{% endblock %}
+
+{% block content%}
+    {% if not request.session.error %}
+
+    <div class="parallaxPerfil">
+        <div class="informacionDeInvocador">
+      <div class="iconoBorde">
+        <img src="{% static '/imagenes/lvl_border/'%}level_{{ aproxNivel }}.png" id="bordeDeNivel" alt="">
+        <img id="icono" src="http://ddragon.leagueoflegends.com/cdn/{{ versionesIcono }}/img/profileicon/{{ idIcono }}">
+        <p id="nivel{{ cantidadDigito }}">{{ invocador.summonerLevel }}</p>
+      </div>
+      <div class="ranked">
+
+          <table>
+          <caption id="nombreInvocadorCapt">{{ invocador.name }}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Solo Queue <br><span class="small">{% if winrateSoloq %}{{ winrateSoloq }}%WinRate{% else %} unranked {% endif %}</span></th>
+                  <th scope="col">Wins</th>
+                  <th scope="col">Looses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td data-label="SOLO QUEUE">{% if soloQeloLevel %}<b>{{ soloQeloLevel }}</b> <br> {{ soloQLp }} LP{% else %} <b>unranked</b> {% endif %}</td>
+                  <td data-label="Wins">{% if soloQWins %}{{ soloQWins }}{% else %} 0 {% endif %}</td>
+                  <td data-label="Looses">{% if soloQLosses %}{{ soloQLosses }}{% else %} 0 {% endif %}</td>
+                </tr>
+              </tbody>
+                  <thead>
+                    <tr>
+                      <th scope="col">Flex Queue <br><span class="small">{% if winrateFlexq %}{{ winrateFlexq }}%WinRate{% else %} unranked {% endif %}</span></th>
+                      <th scope="col">Wins</th>
+                      <th scope="col">Looses</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="FLEX QUEUE">{% if flexQeloLevel %}<b>{{ flexQeloLevel }}</b> <br> {{ flexQLp }} LP{% else %} <b>unranked</b> {% endif %}</td>
+                      <td data-label="Wins">{% if flexQWins %}{{ flexQWins }}{% else %} 0 {% endif %}</td>
+                      <td data-label="Looses">{% if flexQLosses %}{{ flexQLosses }}{% else %} 0 {% endif %}</td>
+                    </tr>
+                  </tbody>
+        </table>
+        <div class="ContenedorDePartidas">
+            <ul id="listaDePartidas">
+            </ul>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+        {% else %}
+        <h1 class="errorAlert">{{ request.session.error }} <br>
+        {% if request.session.error1 %}{{ request.session.error1 }}{% endif %}<br>
+        {% if request.session.error2 %}{{ request.session.error2 }}{% endif %}<br>
+    </h1>
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    {{ partidas|json_script:'partidasJSON' }}
+    <script src="{% static 'javascript/mostrarPartidas.js' %}"></script>
+{% endblock %}

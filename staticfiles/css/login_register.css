@@ -1,0 +1,69 @@
+@font-face {
+    font-family: simpletix;
+    src: url('/static/tipografia/simpletix.otf') format('opentype');
+}
+:root{
+    --color1-:#30cfd0;
+    --color2-:#330867;
+    --cyan-oscuro-:#00766B;
+    --cyan-claro-:#00c9b9;
+    --morado-oscuro-:#543f5a;
+    --morado-claro-:#917a97;
+}
+::placeholder{
+    color: red;
+    font-size: 0.8rem;
+}
+*{
+    font-family: "simpletix", sans-serif;
+}
+.container{
+    height: 100vh;
+}
+.my-background-color{
+    background: var(--color1-);
+    background: linear-gradient(135deg, var(--cyan-oscuro-) 0%, var(--cyan-claro-) 100%);
+}
+.form-rounded{
+    border-radius: 1.2rem;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus{
+    background-color: rgb(234, 234, 234);
+}
+
+.mybutton{
+    font-weight: bold;
+    color: white;
+    border: solid 2px;
+    background: linear-gradient(135deg, var(--cyan-claro-) 0%, var(--cyan-oscuro-) 100%);
+    transition: .3s;
+}
+.mybutton:hover{
+    transition: 1s;
+    background: white;
+    color: black;
+    border: solid 2px var(--cyan-oscuro-);
+}
+
+.buttonBgImage{
+    color: white;
+    background-color: transparent;
+    border: solid 2px white;
+}
+.buttonBgImage:hover{
+    color: var(--cyan-oscuro-);
+    background-color: white;
+}
+
+.fondoDelCuerpo{
+    background: #2e1c34;  /* fallback for old browsers */
+
+    background: linear-gradient(to bottom, #2F0743, #2e1c34); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.round-01{
+ border-radius: 0px 1.2rem 1.2rem 0px;
+}
+.round-02{
+    border-radius: 1.2rem 0px 0px 1.2rem;
+}

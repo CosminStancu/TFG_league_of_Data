@@ -1,0 +1,261 @@
+@import url("variables.css");
+@import url("error.css");
+
+
+.parallaxPerfil{
+    position: absolute;
+	padding: 0;
+	width: 100%;
+    background-image: url('https://pbs.twimg.com/media/EWk2RI5UEAAZ_67?format=jpg&name=large');
+    min-height: 93%;
+	background-attachment: fixed;
+	background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*INFORMACION DE INVOCADOR*/
+.informacionDeInvocador{
+    margin-top: 2rem;
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    float:left;
+}
+.ranked{
+    margin-right: 20px;
+    color: white;
+    font-size: 2rem;
+}
+.clasificaciones tr td{
+    border: solid 2px;
+    width: 600px;
+}
+
+
+/*IMAGEN*/
+    .iconoBorde{
+        width: min-content;
+        position: relative;
+    }
+    #icono{
+        -webkit-user-select:none;
+        width: 17rem;
+        height: 17rem;
+        border-radius: 50%;
+        margin-left:5.3rem;
+        margin-top: 3rem;
+        margin-right: 5rem;
+    }
+    #bordeDeNivel{
+        -webkit-user-select:none;
+        z-index: 10;
+        position: absolute;
+        width: 26rem;
+        height: 26rem;
+        margin-left: .5rem;
+        margin-top: -1rem;
+    }
+    #nivel1,#nivel2,#nivel3,#nivel4{
+        -webkit-user-select:none;
+        font-size: 2rem;
+        color: white;
+        z-index: 11;
+        position: absolute;
+        top: 18.5rem;
+    }
+    #nivel1{
+        left:13rem;
+    }
+    #nivel2{
+        left:12.5rem;
+    }
+    #nivel3{
+        left:12rem;
+    }
+    #nivel4{
+         font-size: 1.8rem;
+            top: 18.7rem;
+         left:11.6rem;
+    }
+    @media screen and (max-width: 992px) {
+        .iconoBorde{
+            width: min-content;
+            position: relative;
+        }
+        #icono{
+            -webkit-user-select:none;
+            width: 14rem;
+            height: 14rem;
+            border-radius: 50%;
+            margin-left:5rem;
+            margin-top: 3rem;
+            margin-right: 4rem;
+        }
+        #bordeDeNivel{
+            -webkit-user-select:none;
+            z-index: 10;
+            position: absolute;
+            width: 22rem;
+            height: 22rem;
+            margin-left: .5rem;
+            margin-top: -1rem;
+        }
+        #nivel{
+            -webkit-user-select:none;
+            font-size: 1.8rem;
+            color: white;
+            position: absolute;
+            top: 15.5rem;
+            left: 10rem;
+        }
+        #nivel1{
+            top: 15.5rem;
+            left:11rem;
+        }
+        #nivel2{
+             top: 15.5rem;
+            left:10.5rem;
+        }
+        #nivel3{
+            top: 15.5rem;
+            left:10rem;
+        }
+        #nivel4{
+             font-size: 1.6rem;
+                top: 15.6rem;
+             left:10rem;
+        }
+    }
+    @media screen and (max-width: 576px) {
+        .iconoBorde{
+            width: min-content;
+            position: relative;
+        }
+        #icono{
+            -webkit-user-select:none;
+            width: 11rem;
+            height: 11rem;
+            border-radius: 50%;
+            margin-left:3.6rem;
+            margin-top: 5.5rem;
+            margin-right: 5rem;
+        }
+        #bordeDeNivel{
+            -webkit-user-select:none;
+            z-index: 10;
+            position: absolute;
+            width: 17rem;
+            height: 17rem;
+            margin-left: .5rem;
+            margin-top: 2.5rem;
+        }
+        #nivel{
+            -webkit-user-select:none;
+            font-size: 1.2rem;
+            color: white;
+            position: absolute;
+            top: 11.9rem;
+            left: 8.1rem;
+        }
+         #nivel1{
+             font-size: 1.6rem;
+            top: 15.2rem;
+            left:8.5rem;
+        }
+        #nivel2{
+              font-size: 1.6rem;
+             top: 15.2rem;
+            left:8.2rem;
+        }
+        #nivel3{
+            font-size: 1.6rem;
+            top: 15.2rem;
+            left:8rem;
+        }
+        #nivel4{
+             font-size: 1.3rem;
+                top: 15.4rem;
+             left:7.8rem;
+        }
+    }
+
+/* TABLA DE RANKED */
+.ranked table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    background: white;
+  }
+
+  .ranked table caption {
+    font-size: 1.2em;
+    text-align: center;
+      background-color: var(--morado-oscuro);
+    color: var(--cyan-claro-);
+    font-weight: bold;
+  }
+
+  .ranked table tr {
+    background-color: rgba(61, 2, 73,.8);
+    border-bottom: 1px solid var(--cyan-claro-);
+  }
+  
+  .ranked table th,
+  .ranked table td {
+    padding: .625rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .ranked table th {
+    background: var(--morado-clarito);
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 576px) {
+    .ranked table {
+      border: 0;
+    }
+    .ranked table caption {
+    font-size: 1.3em;
+    }
+    .ranked table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    .ranked table tr {
+      border-bottom: 3px solid var(--cyan-claro-);
+      display: block;
+    background-color:var(--morado-clarito);
+      margin-bottom: .625rem;
+    }
+    
+    .ranked table td {
+      border-bottom: 1px solid var(--cyan-claro-);
+      display: block;
+      font-size: 1rem;
+      text-align: right;
+    }
+    
+    .ranked table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .ranked table td:last-child {
+      border-bottom: 0;
+    }
+  }

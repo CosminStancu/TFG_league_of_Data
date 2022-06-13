@@ -1,0 +1,28 @@
+@import url("variables.css");
+@import url("error.css");
+.parallaxEditProfile{
+    position: absolute;
+	padding: 0;
+	width: 100%;
+    background-image: url('https://as.com/esports/imagenes/2017/09/18/league_of_legends/1505743623_885293_1505743732_noticia_normal.jpg');
+    min-height: 93%;
+	background-attachment: fixed;
+	background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content{
+    background: rgba(0,0,0,0.4);
+    margin: 60px auto;
+    color: white;
+}
+.helptext, #id_password, label[for='id_password']{
+    display: none;
+}
+label{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.myDisabledInput{
+    cursor: default!important;
+}
