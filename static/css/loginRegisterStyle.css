@@ -89,4 +89,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .round-02r{
      border-radius: 0rem 0rem 1.2rem 1.2rem;
 }
+}.mensajeErrorLogin{
+    display: none;
+    color: red;
+    font-size: 1.2rem;
 }

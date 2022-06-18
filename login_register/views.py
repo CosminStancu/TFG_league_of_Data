@@ -64,7 +64,9 @@ def loginPage(request):
             login(request, user)
             return redirect('login_register:index')
         else:
-            messages.info(request, 'Usuario o contraseña no validos')
+            context = {}
+            context['error'] = "Invalid credentials"
+            return render(request, 'login_register/login.html', context)
 
     context = {}
     return render(request, 'login_register/login.html', context)
@@ -84,6 +86,7 @@ def registerPage(request):
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request, user+' ha sido creado correctamente')
+            request.session['correctCreation'] = 'User Created'
             return redirect('login_register:loginPage')
 
     contexto = {}

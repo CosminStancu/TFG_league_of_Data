@@ -2,6 +2,7 @@ $(window).on('load', function (){
     $('#botonRegistrar').on({
         click:validar
     })
+
 })
 
 if(errores.innerHTML != "{}"){
