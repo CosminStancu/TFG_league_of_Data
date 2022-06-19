@@ -25,7 +25,7 @@ mimetypes.add_type("text/css", ".css", True)
 SECRET_KEY = 'django-insecure-&yoeqz*!0a5d!77h)!b((w$o+lmpdlzkg^rrcv7b)*73v$8*@4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -136,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-RIOT_API = 'RGAPI-7f1ca153-d574-4991-a64c-2480081f6809'
+RIOT_API = 'RGAPI-d8ad2005-1d58-4954-96d8-449f15c72f37'
